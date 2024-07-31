@@ -1,0 +1,79 @@
+AWS project to Deploying a wordpress on AWS.
+
+🚀 Create a WordPress site on AWS EC2.
+🖥 Use Apache as the web server.
+🗄 Install MySQL for database management.
+🎨 Customize your WordPress site easily.
+🔗 Link your domain name to the website.
+🔒 Secure your site with an SSL certificate.
+📚 Learn hands-on cloud hosting techniques.
+Key Insights
+🌐 AWS EC2 Deployment: Utilizing AWS EC2 allows for scalable and flexible hosting solutions, enabling users to deploy websites efficiently and securely.
+📦 Web Server Setup: Installing Apache not only serves web pages but also enhances website performance, making it a popular choice among developers.
+🛠 MySQL Integration: Understanding database management with MySQL is crucial for dynamic sites, facilitating data handling and storage for WordPress.
+🎉 WordPress Customization: WordPress empowers users to build and customize websites without extensive coding, making it accessible for non-developers.
+📋 Domain Configuration: Linking a custom domain enhances professionalism and helps in brand establishment while improving SEO visibility.
+🔒 SSL Certificate Importance: Securing a website with SSL is essential for building trust with users, protecting data, and improving SEO rankings.
+📈 Hands-On Learning: The step-by-step approach fosters practical skills in cloud hosting, essential for aspiring web developers and IT professionals.
+
+-----
+
+
+Here’s a concise 300-word guide to deploying a WordPress website on AWS EC2:
+
+---
+
+### **Deploy a WordPress Website on AWS EC2**
+
+**1. Create an EC2 Instance**
+   - Go to the AWS EC2 dashboard.
+   - Click "Launch Instance," select "Ubuntu" as the OS.
+   - Choose instance type (e.g., `t2.micro`).
+   - Create and download a new SSH key pair.
+   - Configure network settings to allow HTTP and HTTPS traffic.
+   - Launch the instance.
+
+**2. Assign an Elastic IP Address**
+   - Allocate and associate an Elastic IP to ensure your instance has a static IP.
+
+**3. Connect to Your EC2 Instance**
+   - Use an SSH client (e.g., MobaXterm) with your private key to connect to the instance.
+
+**4. Install Apache Web Server**
+   - Run `sudo apt install apache2`.
+   - Verify installation by accessing your instance’s IP address.
+
+**5. Install PHP and MySQL**
+   - Install PHP and MySQL with `sudo apt install php libapache2-mod-php mysql-server`.
+   - Configure MySQL for WordPress by setting up a database and user.
+
+**6. Install WordPress**
+   - Download WordPress using `wget` and unzip it.
+   - Move WordPress files to `/var/www/html`.
+   - Visit your instance’s IP with `/wordpress` to complete the setup.
+   - Create a `wp-config.php` file if prompted.
+
+**7. Configure Apache for Root Directory**
+   - Edit Apache’s configuration (`/etc/apache2/sites-available/000-default.conf`) to set the document root to `/var/www/html/wordpress`.
+   - Restart Apache with `sudo systemctl restart apache2`.
+
+**8. Assign a Domain Name**
+   - Update DNS settings to point your domain to your Elastic IP.
+   - Modify Apache config to recognize your domain and subdomain.
+
+**9. Secure Your Website with HTTPS**
+   - Install Certbot using `sudo apt-get update` and `sudo apt-get install certbot python3-certbot-apache`.
+   - Obtain an SSL certificate with `sudo certbot --apache`.
+
+**10. Verify HTTPS and Domain**
+   - Ensure your site is accessible via HTTPS.
+   - Update WordPress settings to use your domain name.
+
+**Additional Tips**
+   - Use strong passwords.
+   - Regularly update WordPress and plugins.
+   - Set up backups.
+
+---
+
+This summary provides a streamlined path for setting up and securing a WordPress site on AWS EC2.
